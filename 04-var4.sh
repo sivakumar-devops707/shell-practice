@@ -16,3 +16,4 @@ exit 1
 else
 
 echo "installing success"
+fi
