@@ -1,9 +1,18 @@
 #!/bin/bash
 
+user=$(id -u)
 
-if [[ $(id -u) -eq 0 ]]; then
-    echo "success"
+if [ $user -ne 0 ]; then
+    echo "please run as sudo user / root user"
     dnf install nginx -y
-else
-    echo "failure"
+
 fi
+echo "installing nginx"
+dnf install nginx -y
+
+if [ $? -ne 0 ]; then
+echo "installing failure...."
+exit 1
+else
+
+echo "installing success"
