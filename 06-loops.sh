@@ -26,7 +26,7 @@ do
       dnf install $package -y
       validate $? $package
     else
-
+      validate $? $package
       echo "installing  $package  skipped"
     fi
 done
