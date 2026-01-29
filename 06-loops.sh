@@ -21,12 +21,12 @@ fi
 for package in $@ 
 do 
    dnf list installed nginx
-     if [ $? -ne 0 ]; then
+     if [ $? -ne 1 ]; then
       echo "$package not installed...installing  $package now ...."
       dnf install $package -y
       validate $? $package
     else
-      validate $? $package
+      
       echo "installing  $package  skipped"
     fi
 done
