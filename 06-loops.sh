@@ -21,7 +21,7 @@ fi
 for package in $@ 
 do 
    dnf list installed nginx
-     if [ $? -ne 1 ]; then
+     if [ $? -ne 0 ]; then
       echo "$package not installed...installing  $package now ...."
       dnf install $package -y
       validate $? $package
